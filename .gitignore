@@ -1,0 +1,30 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform working directory
+.terraform/
+.terraform.lock.hcl
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Local environment overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore provider plugins on Windows
+terraform.exe
+
+# OS-specific crap
+.DS_Store
+Thumbs.db
