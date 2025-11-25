@@ -18,3 +18,13 @@ module "vpc_layer" {
   private_route_table_name = "0x1-pri-rt-aps1"
   internet_gateway_name = "0x1-ig-aps1"
 }
+module "ec2" {
+  source = "./ec2-instance"
+  instance_name = "0x1-ec2-aps1"
+  instance_type = "t2.nano"
+  ami_id = "ami-02b8269d5e85954ef"
+  key_name = "vpc-test-ap-south-1-ec2-ssh-keys"
+  security_group_name = "0x1-sg-aps1"
+  vpc_id = module.vpc_layer.vpc_id
+  subnet_id = module.vpc_layer.subnet_id
+}
