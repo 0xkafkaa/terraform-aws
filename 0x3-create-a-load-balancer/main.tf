@@ -26,5 +26,14 @@ module "ec2" {
   key_name = "vpc-test-ap-south-1-ec2-ssh-keys"
   security_group_name = "0x1-sg-aps1"
   vpc_id = module.vpc_layer.vpc_id
-  subnet_id = module.vpc_layer.subnet_id
+  subnet_id = module.vpc_layer.subnet_ids.public_id
+}
+module "load_balancer" {
+  source = "./load-balancer"
+  target_group_name = "0x1-tg-aps1"
+  vpc_id = module.vpc_layer.vpc_id
+  instance_id = module.ec2.instance_id
+  load_balancer_name = "0x1-lb-aps1"
+  security_group_id = module.ec2.security_group_id
+  subnet_ids = module.vpc_layer.subnet_ids
 }
