@@ -1,0 +1,11 @@
+variable "vpc_name" {}
+variable "cidr_block_vpc" {}
+variable "public_subnet_name" {}
+variable "cidr_block_public_subnet" {}
+variable "availability_zone_public_subnet" {}
+variable "private_subnet_name" {}
+variable "cidr_block_private_subnet" {}
+variable "availability_zone_private_subnet" {}
+variable "public_route_table_name" {}
+variable "private_route_table_name" {}
+variable "internet_gateway_name" {}
